@@ -54,8 +54,7 @@ class Solver:
 
         T1 = 45 - delta_temp
         T2 = 45 + delta_temp
-        Temp = np.empty(self.nx)
-        Temp[:] = T1 + (T2 - T1) * self.X[:] / self.width
+        Temp = T1 + (T2 - T1) * np.linspace(0, self.width, self.nx) / self.width
 
         MU_I = np.empty(self.nx)
 
@@ -87,5 +86,5 @@ class Solver:
         print(f'Hydraulic resistance coefficient: {self.const * self.width / (500 * velocity_b_A * velocity_b_A)}')
 
 
-# Solver(nx=21, width=0.002).isothermal_calc()
+Solver(nx=21, width=0.002).isothermal_calc()
 Solver(nx=21, width=0.002).nonisothermal_calc()

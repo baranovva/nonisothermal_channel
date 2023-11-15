@@ -114,10 +114,10 @@ def plot_isothermal() -> None:
 
 @plot_decorator
 def plot_nonisothermal() -> None:
-    plt.plot(u10, x81, label='11 points', c='g')
-    plt.plot(u20, x81, label='21 points', c='r')
-    plt.plot(u30, x81, label='41 points', c='b')
-    plt.plot(u40, x81, label='81 points', c='c')
+    plt.plot(u10, x81, label='10 degrees', c='g')
+    plt.plot(u20, x81, label='20 degrees', c='r')
+    plt.plot(u30, x81, label='30 degrees', c='b')
+    plt.plot(u40, x81, label='40 degrees', c='c')
 
 
 @plot_decorator

@@ -14,8 +14,7 @@ class Model:
         self.model = self.fitted_model()
 
     def fitted_model(self) -> object:
-        poly = PolynomialFeatures(degree=4)
-        X_poly = poly.fit_transform(self.futures)
+        X_poly = PolynomialFeatures(degree=4).fit_transform(self.futures)
 
         base_model = LinearRegression()
         model = base_model.fit(X_poly, self.targets)
@@ -36,7 +35,7 @@ class Model:
 
         plt.plot(array, self.model.predict(array_poly), label='Polynomial regression', c='g')
         plt.scatter(self.futures, self.targets, label='Initial data', c='r')
-        plt.ylabel('Mu')
+        plt.ylabel('Mu, Pa*s')
         plt.xlabel('T, C')
         plt.legend()
         plt.grid(True)

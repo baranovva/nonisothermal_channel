@@ -45,8 +45,8 @@ class Solver:
 
         print('=' * 20)
         print(f'isothermal, nx = {self.nx}')
-        print(f'Analytical mass-weighed average velocity: {self.mu0 / self.width};'
-              f' Mass-weighed average velocity: {velocity_average}'
+        print(f'Analytical average velocity: {self.mu0 / self.width};'
+              f' Average velocity: {velocity_average}'
               f', delta % {(1 - velocity_average / (self.mu0 / self.width)) * 100}')
 
         U_AN = - self.const / (2 * self.mu0) * self.X ** 2 + self.const * self.width / (2 * self.mu0) * self.X
@@ -84,7 +84,7 @@ class Solver:
 
         print('=' * 20)
         print(f'nonisothermal, nx = {self.nx}, delta_T = {delta_temp}')
-        print(f'Mass-weighed average velocity: {velocity_average}')
+        print(f'Average velocity: {velocity_average}')
         print(f'Hydraulic resistance coefficient:'
               f' {self.const * self.width / (500 * velocity_average * velocity_average)}')
 
